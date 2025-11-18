@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ATLAS Meridia LLC - Knowledge Management Tools & AI Experiments">
+    <meta name="keywords" content="knowledge management, AI tools, experimental technology, automation">
+    <title>ATLAS Meridia LLC | Knowledge Tools & AI Experiments</title>
+    
+    <!-- Optimized Google Fonts - Only loading the weights we need -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400&family=IBM+Plex+Serif:ital,wght@0,200;0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --text-primary: #e5e5e5;
+            --text-secondary: #a8a8a8;
+            --text-dim: #707070;
+            --accent-gold: #d4af37;
+            --accent-gold-dim: #b8941f;
+            --border-color: #1a1a1a;
+        }
+        
+        body {
+            font-family: 'IBM Plex Serif', serif;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-size: 18px; /* Base font size unconventionally large */
+        }
+        
+        /* Subtle gradient background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, #0f0f0f 0%, #000000 100%);
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        header {
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 5rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 200;
+            letter-spacing: 0.15em;
+            color: var(--text-primary);
+        }
+        
+        .logo span {
+            font-family: 'IBM Plex Sans', sans-serif;
+            color: var(--accent-gold);
+            font-weight: 400;
+            letter-spacing: 0.12em;
+        }
+        
+        main {
+            text-align: center;
+            padding: 5rem 0;
+        }
+        
+        h1 {
+            font-size: clamp(3rem, 7vw, 5rem);
+            font-weight: 200;
+            letter-spacing: -0.01em;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+            color: var(--text-primary);
+        }
+        
+        .subtitle {
+            font-size: 1.6rem;
+            color: var(--text-secondary);
+            margin-bottom: 4rem;
+            font-weight: 300;
+            font-style: italic;
+            letter-spacing: 0.02em;
+        }
+        
+        .description {
+            max-width: 850px;
+            margin: 0 auto 5rem;
+            font-size: 1.3rem; /* Unconventionally large body text */
+            line-height: 1.9;
+            color: var(--text-secondary);
+            font-weight: 300;
+            letter-spacing: 0.01em;
+        }
+        
+        .contact-section {
+            margin-top: 5rem;
+            padding-top: 4rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .contact-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--text-dim);
+            margin-bottom: 1.2rem;
+            font-weight: 500;
+        }
+        
+        .contact-info {
+            font-size: 1.4rem;
+            font-weight: 300;
+        }
+        
+        .contact-info a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+            letter-spacing: 0.02em;
+        }
+        
+        .contact-info a:hover {
+            color: var(--accent-gold);
+            border-bottom-color: var(--accent-gold);
+        }
+        
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-color);
+            margin-top: auto;
+        }
+        
+        .footer-content {
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            font-weight: 300;
+        }
+        
+        .legal-info {
+            margin-top: 1.2rem;
+            font-size: 0.85rem;
+            line-height: 1.8;
+            letter-spacing: 0.01em;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px; /* Still larger than conventional */
+            }
+            
+            .container {
+                padding: 0 20px;
+            }
+            
+            main {
+                padding: 3rem 0;
+            }
+            
+            header {
+                margin-bottom: 3rem;
+            }
+            
+            .description {
+                font-size: 1.15rem;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.3rem;
+            }
+        }
+        
+        /* Elegant fade-in animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        main > * {
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 0.1s;
+            opacity: 0;
+        }
+        
+        main > *:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        main > *:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+        
+        main > *:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+        
+        /* Additional typographic refinements */
+        ::selection {
+            background: var(--accent-gold);
+            color: var(--bg-primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                ATLAS <span>MERIDIA</span>
+            </div>
+        </header>
+        
+        <main>
+            <h1>Knowledge Management Tools</h1>
+            <p class="subtitle">Building Systems for the Age of AI</p>
+            
+            <div class="description">
+                ATLAS Meridia LLC is an experimental laboratory focused on developing 
+                knowledge management tools, AI-powered workflows, and automation systems. 
+                We explore the intersection of artificial intelligence and human productivity 
+                to build practical solutions for tomorrow's challenges.
+            </div>
+            
+            <div class="contact-section">
+                <p class="contact-label">Contact</p>
+                <div class="contact-info">
+                    <a href="mailto:lab@atlasm.net">lab@atlasm.net</a>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>&copy; 2025 ATLAS Meridia LLC. All rights reserved.</div>
+                <div class="legal-info">
+                    ATLAS Meridia LLC is a Wyoming Limited Liability Company<br>
+                    2108 N ST STE N, Sacramento, CA 95816<br>
+                    Registered Agent: Northwest Registered Agent Service Inc, Sheridan, WY
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
